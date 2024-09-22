@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Minha Declaração</title>
+  <style>
+    body {
+      background: linear-gradient(to right, #ffffff, #ec9fc4);
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      color: #fff;
+    }
+    .music-box {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: rgba(255, 255, 255, 0.2);
+      border-radius: 15px;
+      padding: 10px;
+      display: flex;
+      align-items: center;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      backdrop-filter: blur(10px);
+    }
+    .music-box:hover {
+      transform: scale(1.05);
+      box-shadow: 0 12px 20px rgba(0, 0, 0, 0.3);
+    }
+    .music-box img {
+      width: 76px;
+      height: 76px;
+      margin-right: 15px;
+    }
+    .controls {
+      display: flex;
+      align-items: center;
+    }
+    .play-btn {
+      background-color: rgba(255, 255, 255, 0.1);
+      border: none;
+      color: white;
+      font-size: 1.5em;
+      cursor: pointer;
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: background-color 0.3s;
+    }
+    .play-btn:hover {
+      background-color: rgba(255, 255, 255, 0.3);
+    }
+    .progress-bar {
+      width: 200px;
+      height: 10px;
+      background-color: rgba(255, 255, 255, 0.3);
+      border-radius: 5px;
+      margin-left: 10px;
+      cursor: pointer;
+    }
+    .progress {
+      height: 100%;
+      background-color: rgba(255, 255, 255, 0.6);
+      border-radius: 5px;
+      width: 0;
+    }
+    .container {
+      max-width: 1200px;
+      margin: 20px auto;
+      padding: 0 15px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+      justify-items: center;
+      flex: 1;
+    }
+    .gallery-item {
+      background-color: rgba(255, 255, 255, 0.9);
+      border-radius: 10px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+      overflow: hidden;
+      transition: transform 0.5s ease, box-shadow 0.5s ease;
+    }
+    .gallery-item:hover {
+      transform: scale(1.05);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+    }
+    .gallery-item img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    .content {
+      max-width: 800px;
+      margin: 20px auto;
+      background: rgba(255, 255, 255, 0.9);
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
+    .section {
+      margin-bottom: 20px;
+    }
+    h2 {
+      color: black;
+    }
+    p {
+      color: black;
+      line-height: 1.6; /* Aumenta o espaçamento entre linhas */
+      margin-bottom: 15px; /* Espaço entre parágrafos */
+      text-align: justify; /* Alinhamento justificado */
+    }
+    .quote {
+      font-style: italic;
+      color: #333;
+      text-align: center;
+      margin: 10px 0;
+    }
+    /* Espaço para fotos */
+    .photo-container {
+      display: flex;
+      justify-content: space-between;
+      margin: 20px 0;
+    }
+    .photo {
+      width: 48%;
+      height: 200px;
+      border-radius: 10px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 1.2em;
+      color: #333;
+    }
+    /* Botão de voltar */
+    .back-button {
+      display: block;
+      margin: 20px auto;
+      padding: 15px 30px;
+      background-color: #ffffff;
+      color: rgb(103, 171, 245);
+      text-align: center;
+      border-radius: 50px;
+      text-decoration: none;
+      font-size: 1.2em;
+      transition: background-color 0.3s ease, transform 0.3s ease;
+      width: 100px;
+      height: 50px;
+      line-height: 50px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
+    .back-button:hover {
+      background-color: #ffffff;
+      transform: scale(1.1);
+    }
+  </style>
+</head>
+<body>
+  <div class="content">
+    <div class="section">
+      <h2>Antes de começar, para uma melhor experiência, dê play na música!</h2>
+      <p>Queria comecar dizendo que talvez tu vai odiar muito esse site mixuruca que eu fiz, mas em minha defesa, eu tive exatos dois dias para mexer nisso tudo. 
+        Tentei deixar de uma forma unica, inclusive as cores rosa e azul que tem nas primeiras paginas, escolhi pq sao nossas cores favoritas.
+        Na segunda pagina, coloquei fotinhas datzu que em breve serao nossas, acompanhada de frases de musicas que me lembram vc. Deixei uma caixinha de musica com night changes pq tbm é nossa trilha sonora.
+        Ta tudo meio ruim? talvez, mas foi do fundo do meu coraçao e da minha criatividade. <br>
+        Pela primeira vez na historia, eu usei meu dom programer para me declarar para uma menina, tem coisa mais boiola que isso? Mas por ti, eu faria tudo isso e mais um pouco. 
+        As vezes, parace ate coisa de filme pensar na gente e como tudo aconteceu, e de vdd eu nao mudaria nada. <br>
+        Obg por sempre tentar me entender e reforçar que eu mereço o que eu tenho hj (no caso vc). Obg por me fazer sempre sorrir pro celular igual uma idiota, obg por me fazer lembrar de ti em cada musica melosa que exite nesse mundo,
+        obg por me causar as melhores sensaçoes so escutando tua voz, obg por existir Ana julia. <br>
+        Sou feliz te amando e sendo amada por vc, sou sem duvidas a mulher mais sortuda desse mundo. Em breve estaremos juntas curtindo mais ainda tudo o que essa vida tem para nos oferecer,
+        contaremos para os nossos filhos (paulistas ta) nossa historia e eles vao falar "caraca a mamae vick é braba slk exxquece". <br>
+        Digo e repito vc é meu primeiro e ultimo pensamento do dia, vc aparece nos meus pensamentos em um frequencia absurdamente assusatadora. E eu acho que ja falei muito, se nao tu se cansa de mim credo... <br>
+        Eu te amo Ana julia :(
+      </p>
+    </div>
+
+    <!-- Espaço para fotos -->
+    <div class="photo-container">
+      <div class="photo"> <img src="one.jpg"  style="width: 100%; height: 200px; object-fit: cover;">
+    </div>
+      <div class="photo"> <img src="two.jpg" style="width: 100%; height: 200px; object-fit: cover;"> 
+    </div>
+    </div>
+
+    <div class="section quote">
+      <p>Eu te amo muito e vou continuar amando até meu último batimento cardíaco.</p>
+    </div>
+  </div>
+  
+  <!-- Botão de voltar -->
+  <a href="index.html" class="back-button">⮜</a>
+  
+  <div class="music-box">
+    <img src="us.jpg" alt="Ícone de música">
+    <div class="controls">
+      <button class="play-btn" id="playPauseBtn">►</button>
+      <div class="progress-bar" id="progressBar">
+        <div class="progress" id="progress"></div>
+      </div>
+    </div>
+    <audio id="audioPlayer">
+      <source src="Billie.m4a" type="audio/mpeg">
+      Seu navegador não suporta o elemento de áudio.
+    </audio>
+  </div>
+
+  <script>
+    const audioPlayer = document.getElementById('audioPlayer');
+    const playPauseBtn = document.getElementById('playPauseBtn');
+    const progressBar = document.getElementById('progressBar');
+    const progress = document.getElementById('progress');
+
+    // Play/Pause
+    playPauseBtn.addEventListener('click', () => {
+      if (audioPlayer.paused) {
+        audioPlayer.play();
+        playPauseBtn.textContent = '❚❚'; // Ícone de pausa
+      } else {
+        audioPlayer.pause();
+        playPauseBtn.textContent = '►'; // Ícone de play
+      }
+    });
+
+    // Atualiza a barra de progresso
+    audioPlayer.addEventListener('timeupdate', () => {
+      const percentage = (audioPlayer.currentTime / audioPlayer.duration) * 100;
+      progress.style.width = `${percentage}%`;
+    });
+
+    // Clique na barra de progresso
+    progressBar.addEventListener('click', (e) => {
+      const rect = progressBar.getBoundingClientRect();
+      const clickX = e.clientX - rect.left;
+      const width = rect.width;
+      const percentage = clickX / width;
+      audioPlayer.currentTime = percentage * audioPlayer.duration;
+    });
+  </script>
+</body>
+</html>
+

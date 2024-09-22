@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Site datzu</title>
+  <style>
+    body {
+      background: linear-gradient(to right, #ff8da1, #005eb8);
+      font-family: 'Arial', sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      flex-direction: column;
+    }
+    h1 {
+      font-size: 3em;
+      color: white;
+      opacity: 0;
+      animation: fadeIn 2s ease forwards;
+      margin-bottom: 20px;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    .button {
+      padding: 15px 30px;
+      font-size: 1.2em;
+      background-color: #ffffff;
+      color: rgb(85, 146, 231);
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background-color 0.3s ease;
+    }
+    .button:hover {
+      background-color: #ffffff;
+    }
+    .music-box {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: rgba(255, 255, 255, 0.2); /* Fundo mais transparente */
+      border-radius: 15px;
+      padding: 10px;
+      display: flex;
+      align-items: center;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      backdrop-filter: blur(10px); /* Efeito de desfoque no fundo */
+    }
+    .music-box:hover {
+      transform: scale(1.05);
+      box-shadow: 0 12px 20px rgba(0, 0, 0, 0.3);
+    }
+
+    .music-box img {
+      width: 180px;
+      height: 180px;
+      margin-right: 15px;
+    }
+
+    .music-box audio {
+      width: 200px; /* Largura reduzida */
+      outline: none;
+      border-radius: 10px;
+    }
+     /* Controles personalizados */
+     .controls {
+      display: flex;
+      align-items: center;
+    }
+    .play-btn {
+      background-color: rgba(255, 255, 255, 0.1);
+      border: none;
+      color: white;
+      font-size: 1.5em;
+      cursor: pointer;
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: background-color 0.3s;
+    }
+    .play-btn:hover {
+      background-color: rgba(255, 255, 255, 0.3);
+    }
+
+    /* Barra de progresso personalizada */
+    .progress-bar {
+      width: 200px;
+      height: 10px;
+      background-color: rgba(255, 255, 255, 0.3);
+      border-radius: 5px;
+      margin-left: 10px;
+      cursor: pointer;
+    }
+    .progress {
+      height: 100%;
+      background-color: rgba(255, 255, 255, 0.6);
+      border-radius: 5px;
+      width: 0;
+    }
+  </style>
+</head>
+<body>
+  <h1>Feliz 4 meses de datzu!</h1>
+  <a href="mais.html" class="button"> ➜</a>
+
+  <!-- Caixa de música personalizada e transparente -->
+  <div class="music-box">
+    <!-- Imagem decorativa -->
+    <img src="datzu.jpg" alt="Ícone de música">
+
+    <!-- Controles de áudio personalizados -->
+    <div class="controls">
+      <!-- Botão de play/pause -->
+      <button class="play-btn" id="playPauseBtn">►</button>
+      
+      <!-- Barra de progresso -->
+      <div class="progress-bar" id="progressBar">
+        <div class="progress" id="progress"></div>
+      </div>
+    </div>
+
+    <!-- Player de áudio escondido -->
+    <audio id="audioPlayer">
+      <source src="nightchanges.m4a" type="audio/mpeg">
+      Seu navegador não suporta o elemento de áudio.
+    </audio>
+  </div>
+
+  <script>
+    const audioPlayer = document.getElementById('audioPlayer');
+    const playPauseBtn = document.getElementById('playPauseBtn');
+    const progressBar = document.getElementById('progressBar');
+    const progress = document.getElementById('progress');
+
+    // Play/Pause
+    playPauseBtn.addEventListener('click', () => {
+      if (audioPlayer.paused) {
+        audioPlayer.play();
+        playPauseBtn.textContent = '❚❚'; // Ícone de pausa
+      } else {
+        audioPlayer.pause();
+        playPauseBtn.textContent = '►'; // Ícone de play
+      }
+    });
+
+    // Atualiza a barra de progresso
+    audioPlayer.addEventListener('timeupdate', () => {
+      const percentage = (audioPlayer.currentTime / audioPlayer.duration) * 100;
+      progress.style.width = `${percentage}%`;
+    });
+
+    // Clique na barra de progresso
+    progressBar.addEventListener('click', (e) => {
+      const rect = progressBar.getBoundingClientRect();
+      const clickX = e.clientX - rect.left;
+      const width = rect.width;
+      const percentage = clickX / width;
+      audioPlayer.currentTime = percentage * audioPlayer.duration;
+    });
+  </script>
+</body>
+</html>
+
+

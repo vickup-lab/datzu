@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Site datzu</title>
+  <style>
+    body {
+      background: linear-gradient(to right, #ff8da1, #005eb8);
+      font-family: 'Arial', sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      flex-direction: column;
+    }
+    h1 {
+      font-size: 3em;
+      color: white;
+      opacity: 0;
+      animation: fadeIn 2s ease forwards;
+      margin-bottom: 20px;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    .button {
+      display: block;
+      margin: 20px auto;
+      padding: 15px 30px;
+      background-color: #ffffff;
+      color: rgb(103, 171, 245);
+      text-align: center;
+      border-radius: 50px; /* Deixar o botão mais redondo */
+      text-decoration: none;
+      font-size: 1.2em;
+      transition: background-color 0.3s ease, transform 0.3s ease;
+      width: 100px;
+      height: 50px;
+      line-height: 50px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
+    .button:hover {
+      background-color: #ffffff;
+    }
+  </style>
+</head>
+<body>
+  <h1>Clica para uma supresa</h1>
+  <a href="mais.html" class="button">➤</a>
+
+</body>
+</html>
+
+
